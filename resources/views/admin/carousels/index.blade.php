@@ -47,6 +47,9 @@
                 @endforeach
             </tbody>
         </table>
+        <div>
+            {{ $carousels->links() }}
+        </div>
     </div>
 </div>
 

@@ -20,7 +20,7 @@ class CarouselController extends Controller
         $language = Language::all();
         $carousels = Carousel::with('language');
         return view('admin.carousels.index', [
-            'carousels' => $carousels->get(),
+            'carousels' => $carousels->paginate(20),
             'languages' => $language
         ]);
     }
