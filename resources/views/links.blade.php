@@ -27,7 +27,7 @@
                             <a href="{{ route('jpYoutube') }}" target="__blank"><img class="rounded-xl" src="{{url('images/youtube.png')}}" alt="K8 Youtube"></a>
                         </div>
                         <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
-                            <a href="{{ route('jpTelegram') }}" target="__blank"><img class="rounded-xl" src="{{url('images/telegram.png')}}" alt="K8 Telegram"></a>
+                            <a href="{{ route('enTelegram') }}" target="__blank"><img class="rounded-xl" src="{{url('images/telegram.png')}}" alt="K8 Telegram"></a>
                         </div>
                         <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
                             <a href="{{ route('jpTwitch') }}" target="__blank"><img class="rounded-xl" src="{{url('images/twitch.png')}}" alt="K8 Discord"></a>

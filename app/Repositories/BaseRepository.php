@@ -38,7 +38,7 @@ class BaseRepository
         return $this->getQuery()->count();
     }
 
-    public function paginate($limit = 1000,array $orderBy = [])
+    public function paginate($limit = 100000,array $orderBy = [])
     {
         $query = $this->getQuery();
         
