@@ -149,7 +149,7 @@
                     @if($promos->participants->count() != 0)
                         <div class="bg-gray-900 p-4 rounded-xl">
                             <div class="mb-4">
-                                <h1 class="text-blue-100 fw-bold">{{__('Participants of this promo')}}</h1>
+                                <h1 class="text-blue-100 fw-bold">{{__('Participants of this promo')}} <span>{{ $promos->participants->count() }}</span></h1>
                             </div>
                             <div class="text-blue-100">
 

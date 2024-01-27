@@ -12,30 +12,55 @@
 
         <section class="rounded-xl pb-20">
             <div class="rounded-xl pt-5">
-                
-                <div class="rounded-xl flex" style="grid-template-columns:repeat(3, 1fr); gap:18px">
-                    <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
-                        <a href="{{ route('enFacebook') }}" target="__blank"><img class="rounded-xl" src="{{url('images/facebook.png')}}" alt="K8 Facebook"></a>
+                @if(app()->getLocale() == 'jp')
+                    <div class="rounded-xl flex" style="grid-template-columns:repeat(3, 1fr); gap:18px">
+                        {{-- <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('enFacebook') }}" target="__blank"><img class="rounded-xl" src="{{url('images/facebook.png')}}" alt="K8 Facebook"></a>
+                        </div> --}}
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('jpInstagram') }}" target="__blank"><img class="rounded-xl" src="{{url('images/instagram.png')}}" alt="K8 Instagram"></a>
+                        </div>
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('jpTwitter') }}" target="__blank"><img class="rounded-xl" src="{{url('images/twitter.png')}}" alt="K8 Twitter"></a>
+                        </div>
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('jpYoutube') }}" target="__blank"><img class="rounded-xl" src="{{url('images/youtube.png')}}" alt="K8 Youtube"></a>
+                        </div>
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('jpTelegram') }}" target="__blank"><img class="rounded-xl" src="{{url('images/telegram.png')}}" alt="K8 Telegram"></a>
+                        </div>
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('jpTwitch') }}" target="__blank"><img class="rounded-xl" src="{{url('images/twitch.png')}}" alt="K8 Discord"></a>
+                        </div>
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('jpLine') }}" target="__blank"><img class="rounded-xl" src="{{url('images/line.png')}}" alt="K8 Tiktok"></a>
+                        </div>
                     </div>
-                    <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
-                        <a href="{{ route('enInstagram') }}" target="__blank"><img class="rounded-xl" src="{{url('images/instagram.png')}}" alt="K8 Instagram"></a>
+                @else
+                    <div class="rounded-xl flex" style="grid-template-columns:repeat(3, 1fr); gap:18px">
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('enFacebook') }}" target="__blank"><img class="rounded-xl" src="{{url('images/facebook.png')}}" alt="K8 Facebook"></a>
+                        </div>
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('enInstagram') }}" target="__blank"><img class="rounded-xl" src="{{url('images/instagram.png')}}" alt="K8 Instagram"></a>
+                        </div>
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('enTwitter') }}" target="__blank"><img class="rounded-xl" src="{{url('images/twitter.png')}}" alt="K8 Twitter"></a>
+                        </div>
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('enYoutube') }}" target="__blank"><img class="rounded-xl" src="{{url('images/youtube.png')}}" alt="K8 Youtube"></a>
+                        </div>
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('enDiscord') }}" target="__blank"><img class="rounded-xl" src="{{url('images/discord.png')}}" alt="K8 Discord"></a>
+                        </div>
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('enTelegram') }}" target="__blank"><img class="rounded-xl" src="{{url('images/telegram.png')}}" alt="K8 Telegram"></a>
+                        </div>
+                        <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
+                            <a href="{{ route('enTiktok') }}" target="__blank"><img class="rounded-xl" src="{{url('images/tiktok.png')}}" alt="K8 Tiktok"></a>
+                        </div>
                     </div>
-                    <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
-                        <a href="{{ route('enTwitter') }}" target="__blank"><img class="rounded-xl" src="{{url('images/twitter.png')}}" alt="K8 Twitter"></a>
-                    </div>
-                    <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
-                        <a href="{{ route('enYoutube') }}" target="__blank"><img class="rounded-xl" src="{{url('images/youtube.png')}}" alt="K8 Youtube"></a>
-                    </div>
-                    <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
-                        <a href="{{ route('enDiscord') }}" target="__blank"><img class="rounded-xl" src="{{url('images/discord.png')}}" alt="K8 Discord"></a>
-                    </div>
-                    <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
-                        <a href="{{ route('enTelegram') }}" target="__blank"><img class="rounded-xl" src="{{url('images/telegram.png')}}" alt="K8 Telegram"></a>
-                    </div>
-                    <div class="border-solid hover:-translate-y-2 hover:shadow-xl rounded-xl ease-in-out duration-500 p-2 bg-gray-900">
-                        <a href="{{ route('enTiktok') }}" target="__blank"><img class="rounded-xl" src="{{url('images/tiktok.png')}}" alt="K8 Tiktok"></a>
-                    </div>
-                </div>
+                @endif
             </div>
         </section>
 
