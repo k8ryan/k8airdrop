@@ -8,7 +8,6 @@
                 <li class="pb-2 hover:-translate-y-1 ease-in-out duration-200"><a class="hover:text-indigo-400" href="/">{{__('Home')}}</a> </li>
                 <li class="pb-2 hover:-translate-y-1 ease-in-out duration-200"><a class="hover:text-indigo-400" href="/news">{{__('News')}}</a></li>
                 <li class="pb-2 hover:-translate-y-1 ease-in-out duration-200"><a class="hover:text-indigo-400" href="/links">{{__('Media')}}</a></li>
-                <li class="pb-2 hover:-translate-y-1 ease-in-out duration-200"><a class="hover:text-indigo-400" href="/promo/results">{{__('Results')}}</a></li>
                 <li class="pb-2 hover:-translate-y-1 ease-in-out duration-200"><a class="hover:text-indigo-400" href="https://www.k8forum.io/" target="_blank">{{__('Forum')}}</a></li>
             </ul>
         </div>

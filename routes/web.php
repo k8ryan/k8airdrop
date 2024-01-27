@@ -238,10 +238,10 @@ Route::controller(HomeController::class)->group(function (){
 });
 
 //RESULTS CONTROLLER
-Route::controller(ResultController::class)->group(function () {
-    Route::get('/promo/results', 'index');
-    Route::get('/promo/result/{slug}/{url_id}', 'show');
-});
+// Route::controller(ResultController::class)->group(function () {
+//     Route::get('/promo/results', 'index');
+//     Route::get('/promo/result/{slug}/{url_id}', 'show');
+// });
 
 Route::get('promo/18k-mega-giveaway', function(){
    return view('18k-giveaway'); 
