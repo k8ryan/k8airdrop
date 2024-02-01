@@ -22,31 +22,10 @@
                 <label for="email">{{__('Email Address')}}</label>
             </div>
             <div>
-                <input class="w-full rounded-md bg-gray-800 border border-gray-700" required type="email" name="email" id="email" value="{{old('email')}}">
+                <input class="required w-full rounded-md bg-gray-800 border border-gray-700" required type="email" name="email" id="email" value="{{old('email')}}">
             </div>
             <div>
                 @error('email')
-                    <span class="text-red-500">{{$message}}</span>
-                @enderror
-            </div>
-        </div>
-
-        <div class="mb-4">
-            <div class="mb-2">
-                <label for="preferred_platform">{{__('Preferred Messaging Platform')}}</label>
-            </div>
-            <div class="mb-4">
-                <select class="w-full rounded-md bg-gray-800 border border-gray-700" name="social_platform">
-                    <!--<option value="facebook">Facebook</option>-->
-                    <option value="instagram">Instagram</option>
-                    <option value="twitter">Twitter</option>
-                </select>
-            </div>
-            <div>
-                <input class="w-full rounded-md bg-gray-800 border border-gray-700" required type="text" name="preferred_platform" id="preferred_platform" value="{{old('preferred_platform')}}" placeholder="{{__('Enter username')}}">
-            </div>
-            <div>
-                @error('preferred_platform')
                     <span class="text-red-500">{{$message}}</span>
                 @enderror
             </div>
