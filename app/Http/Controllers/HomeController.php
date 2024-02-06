@@ -217,21 +217,37 @@ public function store_register(Request $request, $slug, $url_id) {
                         ]);
                     }elseif($promo->game_type == "multiple_choice") {
 
-                        $no_answer = "0"; 
 
-                        foreach($request->choices as $choice => $choice_value) {
-                            $choices[] = $choice_value;
-                        }
-
-                        if(in_array($no_answer, $choices)) {
-                            return redirect()->back()->with('click-to-join-message-failed', 'Please answer all the questions')->withInput();
-                        } else {
+                        if($request->choices == null) {
                             $participant = Participant::create([
                                 'preferred_platform' => $request->preferred_platform,
                                 'k8_username' => strtolower($request->k8_username),
                                 'winner' => "No",
                                 'promo_id' => $promo->id,
-                                // 'comment' => $request->comment,
+                                'promo_url_id' =>  $url_id,
+                                'participant_ip' => request()->ip(),
+                            ]);
+
+                            foreach($request->question_comment as $question_value) {
+                                Comment::create([
+                                    'promo_id' => $promo->id,
+                                    'participant_id' => $participant->id,
+                                    'url_id' => $promo->url_id,
+                                    'answers' => $question_value,
+                                ]);
+                            }
+                        } 
+                         elseif($request->question_comment == null) {
+
+                            foreach($request->choices as $choice => $choice_value) {
+                                $choices[] = $choice_value;
+                            }
+    
+                            $participant = Participant::create([
+                                'preferred_platform' => $request->preferred_platform,
+                                'k8_username' => strtolower($request->k8_username),
+                                'winner' => "No",
+                                'promo_id' => $promo->id,
                                 'promo_url_id' =>  $url_id,
                                 'participant_ip' => request()->ip(),
                             ]);
@@ -246,6 +262,31 @@ public function store_register(Request $request, $slug, $url_id) {
                                 }
                             }
 
+                         } else {
+
+                            foreach($request->choices as $choice => $choice_value) {
+                                $choices[] = $choice_value;
+                            }
+    
+                            $participant = Participant::create([
+                                'preferred_platform' => $request->preferred_platform,
+                                'k8_username' => strtolower($request->k8_username),
+                                'winner' => "No",
+                                'promo_id' => $promo->id,
+                                'promo_url_id' =>  $url_id,
+                                'participant_ip' => request()->ip(),
+                            ]);
+    
+                            foreach ($request->choices as $choice_values) {
+                                if (is_array($choice_values)) {
+                                    foreach ($choice_values as $choice_value) {
+                                        $participant->choices()->attach($choice_value);
+                                    }
+                                }  else {
+                                    $participant->choices()->attach($choice_values);
+                                }
+                            }
+    
 
                             foreach($request->question_comment as $question_value) {
                                 Comment::create([
@@ -255,13 +296,13 @@ public function store_register(Request $request, $slug, $url_id) {
                                     'answers' => $question_value,
                                 ]);
                             }
-                            
-
-
-                            // foreach ($request->choices as $key => $choice_value) {
-                            //     $choices =  $participant->choices()->attach($choice_value);
-                            // }
                         }
+
+
+
+                       
+                        
+                        
 
                     }  else {
                         $participant = Participant::create([
