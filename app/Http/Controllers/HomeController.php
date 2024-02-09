@@ -173,11 +173,11 @@ public function store_register(Request $request, $slug, $url_id) {
         
         $validator = Validator::make($request->all(), [
             'k8_username' => 'required|min:3|max:30',
-            'preferred_platform' => 'required|min:3|max:30',
+            // 'preferred_platform' => 'required|min:3|max:30',
         ],
         [
             'k8_username.required' => 'K8 Username field must not be empty.',
-            'preferred_platform.required' => 'Social ID field must not be empty.',
+            // 'preferred_platform.required' => 'Social ID field must not be empty.',
         ]);
 
         if($validator->fails()) {
@@ -201,7 +201,7 @@ public function store_register(Request $request, $slug, $url_id) {
                             'winner' => "No",
                             'promo_id' => $promo->id,
                             'participant_ip' => request()->ip(),
-                            'preferred_platform' => $request->social_platform . " : " . $request->preferred_platform,
+                            // 'preferred_platform' => $request->social_platform . " : " . $request->preferred_platform,
                             'promo_url_id' =>  $url_id,
                             'image' =>  $request->image = $newImageName
                         ]);
@@ -216,8 +216,6 @@ public function store_register(Request $request, $slug, $url_id) {
                             'participant_ip' => request()->ip(),
                         ]);
                     }elseif($promo->game_type == "multiple_choice") {
-
-
                         if($request->choices == null) {
                             $participant = Participant::create([
                                 'preferred_platform' => $request->preferred_platform,
@@ -227,7 +225,6 @@ public function store_register(Request $request, $slug, $url_id) {
                                 'promo_url_id' =>  $url_id,
                                 'participant_ip' => request()->ip(),
                             ]);
-
                             foreach($request->question_comment as $question_value) {
                                 Comment::create([
                                     'promo_id' => $promo->id,
@@ -236,8 +233,7 @@ public function store_register(Request $request, $slug, $url_id) {
                                     'answers' => $question_value,
                                 ]);
                             }
-                        } 
-                         elseif($request->question_comment == null) {
+                        } elseif($request->question_comment == null) {
 
                             foreach($request->choices as $choice => $choice_value) {
                                 $choices[] = $choice_value;
@@ -297,13 +293,6 @@ public function store_register(Request $request, $slug, $url_id) {
                                 ]);
                             }
                         }
-
-
-
-                       
-                        
-                        
-
                     }  else {
                         $participant = Participant::create([
                             'preferred_platform' => $request->preferred_platform,
