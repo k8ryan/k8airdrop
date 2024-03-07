@@ -49,12 +49,12 @@
                     </div>
                     <div class="text-white">{{$categoryBlog->links('pagination::tailwind')}}</div>
                 </section>
-                {{-- @include('layouts.news-recommended')
-                @include('layouts.feature-game') --}}
+                @include('layouts.news-recommended')
+                @include('layouts.feature-game')
             </div>
 
             <div class="flex-0 lg:w-1/5 md:w-100 lg:pt-0 md:pt-12">
-              {{-- @include('layouts.news-sidebar') --}}
+              @include('layouts.news-sidebar')
             </div>
         </div>
         
