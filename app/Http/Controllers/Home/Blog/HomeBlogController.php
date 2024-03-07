@@ -118,7 +118,7 @@ class HomeBlogController extends Controller
         $getLocale = (new GetCountryCodeController)->getCountryCode();
 
         $blog = Blog::with('category', 'language', 'tags')->where('status', 'active');
-        $category = Category::with('language', 'blog');
+        $category = Category::with('language');
         $tag = Tag::with('language')->get();
         $tag_blog = Tag::with('language', 'blogs')->where('slug', $slug)->first();
 
