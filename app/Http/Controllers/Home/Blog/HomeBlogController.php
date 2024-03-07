@@ -98,12 +98,11 @@ class HomeBlogController extends Controller
             $recommendedBlog = $blog->where('language_id', 1)->inRandomOrder()->take(3)->get();
             $blog_most_read =  $blog->where('language_id', 1)->inRandomOrder()->take(5)->get();
             $tags = $tag->where('language_id' , 1);
-        } 
-   
+        }
 
         return view('news-category', [
             'category_blog' => $category_blog,
-            'categoryBlog' => $categoryBlog->paginate(18),
+            'categoryBlog' => $categoryBlog->paginate(30),
             'blogs' => $blog,
             'blog_most_read' => $blog_most_read,
             'categories' => $category->get(),
