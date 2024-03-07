@@ -80,6 +80,15 @@ class HomeBlogController extends Controller
 
         $blog = Blog::with('category', 'language', 'tags')->where('status', 'active');
         $category_blog = Category::with('language', 'blog')->where('slug', $slug)->first();
+        
+        $categoryBlog = Blog::with('language')->orderBy('created_at', 'desc')
+            ->whereHas('category', function ($query) use ($slug) {
+                return $query->where('slug', $slug);
+        });
+
+        // dd($categoryBlog);
+
+        
         $category = Category::with('language', 'blog');
         $tag = Tag::with('language')->get();
         $blog_most_read = $blog->orderBy('created_at', 'asc')->inRandomOrder()->limit(5)->get();
@@ -97,6 +106,7 @@ class HomeBlogController extends Controller
 
         return view('news-category', [
             'category_blog' => $category_blog,
+            'categoryBlog' => $categoryBlog->paginate(18),
             'blogs' => $blog,
             'blog_most_read' => $blog_most_read,
             'categories' => $category->get(),

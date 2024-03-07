@@ -19,7 +19,8 @@
                 <h1 class="text-blue-100"></h1>
                 <section>
                     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                        @foreach ($category_blog->blog()->orderBy('created_at', 'desc')->get() as $blog)
+                        {{-- @foreach ($category_blog->blog()->orderBy('created_at', 'desc')->get() as $blog) --}}
+                        @foreach($categoryBlog as $blog)
                             @if($blog->language->code == app()->getLocale() && $blog->status == "active")
                                 <div class="bg-gray-900 rounded-xl hover:-translate-y-2 hover:shadow-xl ease-in-out duration-200 relative">
                                     <a href="/news/{{$blog->slug}}" class="w-full absolute h-full bg-transparent"></a>
@@ -46,7 +47,7 @@
                             @endif
                         @endforeach
                     </div>
-                    
+                    <div class="text-white">{{$categoryBlog->links('pagination::tailwind')}}</div>
                 </section>
                 @include('layouts.news-recommended')
                 @include('layouts.feature-game')
