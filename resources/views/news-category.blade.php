@@ -51,7 +51,7 @@
             </div>
 
             <div class="flex-0 lg:w-1/5 md:w-100 lg:pt-0 md:pt-12">
-              @include('layouts.news-sidebar')
+              {{-- @include('layouts.news-sidebar') --}}
             </div>
         </div>
         
