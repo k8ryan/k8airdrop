@@ -9,7 +9,7 @@
         </div>
 
         <div class="pb-5">
-            @include('layouts.news-category-mobile')
+            {{-- @include('layouts.news-category-mobile') --}}
         </div>
 
         <div class="flex-none lg:flex md:flex-none">
