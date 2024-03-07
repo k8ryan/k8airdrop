@@ -5,7 +5,7 @@
     
     <div class="mt-5">
         <div class="flex">
-            <div class="flex-1"><h1 class="text-blue-100 text-2xl">{{__($category_blog->title)}}</h1></div>
+            {{-- <div class="flex-1"><h1 class="text-blue-100 text-2xl">{{__($category_blog->title)}}</h1></div> --}}
         </div>
 
         <div class="pb-5">
@@ -49,12 +49,12 @@
                     </div>
                     <div class="text-white">{{$categoryBlog->links('pagination::tailwind')}}</div>
                 </section>
-                @include('layouts.news-recommended')
-                @include('layouts.feature-game')
+                {{-- @include('layouts.news-recommended')
+                @include('layouts.feature-game') --}}
             </div>
 
             <div class="flex-0 lg:w-1/5 md:w-100 lg:pt-0 md:pt-12">
-              @include('layouts.news-sidebar')
+              {{-- @include('layouts.news-sidebar') --}}
             </div>
         </div>
         
