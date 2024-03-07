@@ -51,16 +51,7 @@
             </div>
 
             <div class="flex-0 lg:w-1/5 md:w-100 lg:pt-0 md:pt-12">
-                <div class="p-4 hidden lg:block bg-gray-900 rounded-xl text-blue-100">
-                    <h1 class="text-xl pb-4">{{__('Categories')}}</h1>
-                    <ul class="">
-                    @foreach ($categories as $category)
-                        <li class="pb-2 hover:-translate-y-1 ease-in-out duration-200 hover:text-indigo-400">
-                            <a href="/news/category/{{$category->slug}}">{{__($category->title)}}</a>
-                        </li>
-                    @endforeach
-                    </ul>
-                </div>
+              @include('layouts.news-sidebar')
             </div>
         </div>
         

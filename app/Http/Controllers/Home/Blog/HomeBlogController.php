@@ -109,7 +109,6 @@ class HomeBlogController extends Controller
             'categories' => $category->get(),
             'tags' => $tags,
             'recommendedBlog' => $recommendedBlog
-
         ]);
     }
 
