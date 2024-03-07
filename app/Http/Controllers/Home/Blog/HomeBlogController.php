@@ -86,7 +86,7 @@ class HomeBlogController extends Controller
                 return $query->where('slug', $slug);
         });
 
-        // $category = Category::with('language', 'blog');
+        $category = Category::with('language', 'blog');
         // $tag = Tag::with('language')->get();
         // $blog_most_read = $blog->orderBy('created_at', 'asc')->inRandomOrder()->limit(5)->get();
    
@@ -106,7 +106,7 @@ class HomeBlogController extends Controller
             'categoryBlog' => $categoryBlog->paginate(18),
             // 'blogs' => $blog,
             // 'blog_most_read' => $blog_most_read,
-            // 'categories' => $category->get(),
+            'categories' => $category->get(),
             // 'tags' => $tags,
             // 'recommendedBlog' => $recommendedBlog
 
